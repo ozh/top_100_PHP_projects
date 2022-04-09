@@ -24,8 +24,8 @@ parsed['items'].each do |item|
   counter_formatted = sprintf('%03d', counter)
   result += "| #{counter_formatted} | [#{item['full_name']}](#{item['html_url']}) | #{item['description']} | #{item['stargazers_count']} | #{item['forks']} |\n"
 end
-# Add date of last update
-result += "\n\nLast update : #{Time.now.strftime("%d/%m/%Y")}\n\n"
+# Add date of last update with day/month/year hour:minute
+result += "\n\nLast update : #{Time.now.strftime("%d/%m/%Y %H:%M")}\n\n"
 
 # Replace the placeholder in the template with the actual data
 template.gsub!('{{data}}', result)
